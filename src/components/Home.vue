@@ -205,10 +205,11 @@ const toggleContact = () => {
         <v-col cols="12" md="6" class="text-center px-4 px-md-8">
           <div class="profile-image-container">
             <v-img
-              src="/profile.jpg"
+              src="/image/profile.png"
               alt="Profile Image"
               class="profile-image hover-scale"
               cover
+              style="object-position: center 30%;"
             ></v-img>
             <div class="floating-card glass-effect">
               <v-icon size="large" color="primary">mdi-code-braces</v-icon>
@@ -321,6 +322,8 @@ const toggleContact = () => {
     inset 5px 5px 10px rgba(255, 255, 255, 0.1),
     inset -5px -5px 10px rgba(0, 0, 0, 0.3);
   transition: all 0.3s ease;
+  object-fit: cover;
+  object-position: center 30%;
 }
 
 .profile-image:hover {
@@ -413,6 +416,8 @@ const toggleContact = () => {
   .profile-image {
     width: 300px;
     height: 300px;
+    object-fit: cover;
+    object-position: center 30%;
   }
   
   .floating-card {
