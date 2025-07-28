@@ -205,7 +205,7 @@ const toggleContact = () => {
         <v-col cols="12" md="6" class="text-center px-4 px-md-8">
           <div class="profile-image-container">
             <v-img
-              src="/image/profile.png"
+              src="/portfolio-kulis/image/profile.png"
               alt="Profile Image"
               class="profile-image hover-scale"
               cover

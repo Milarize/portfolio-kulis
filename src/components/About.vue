@@ -11,7 +11,7 @@
           <v-row>
             <v-col cols="12" md="4" class="text-center">
               <v-avatar size="200" class="mb-4 flip-avatar">
-                <v-img src="/image/profile.png" alt="Profile Picture"></v-img>
+                <v-img src="/portfolio-kulis/image/profile.png" alt="Profile Picture"></v-img>
               </v-avatar>
             </v-col>
             <v-col cols="12" md="8">
