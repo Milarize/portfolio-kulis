@@ -192,11 +192,11 @@ const showProjectDetails = ref(false)
 const projects = ref([
   {
     id: 1,
-    title: 'D-Coffee Website',
-    description: 'แพลตฟอร์มร้านค้าออนไลน์สำหรับสินค้าประเภทกาแฟ',
+    title: 'BUU-Library',
+    description: 'ระบบจัดการร้านกาแฟ และ ร้านอาหารของห้องสมุด รวมไปถึงการจัดเลี้ยงและการจัดคลังสต็อกสินค้า',
     image: '/projects/ecommerce.jpg',
-    technologies: ['Vue.js', 'Node.js', 'MongoDB'],
-    link: 'https://example.com/ecommerce',
+    technologies: ['Vue.js', 'Node.js', 'MySQL','Nest.js','JavaSwing'],
+    link: 'https://docs.google.com/spreadsheets/d/1v0uIEfAkzuWX7dRanWnghagtOmZxWxnuB0yLmswtIEY/edit?gid=0#gid=0',
     details: {
       overview: 'แพลตฟอร์มร้านค้าออนไลน์ที่ครบวงจรสำหรับสินค้าประเภทกาแฟ ประกอบด้วยระบบสมาชิก การจัดการสินค้า ตะกร้าสินค้า และการชำระเงิน',
       features: [
@@ -229,6 +229,7 @@ const projects = ref([
     title: 'Mobile Learning Application for the Elderly',
     description: 'แอปพลิเคชันสำหรับการเรียนรู้และฝึกทักษะสำหรับผู้สูงอายุ',
     image: '/projects/taskapp.jpg',
+    link: 'https://moocapp.buu.in.th',
     technologies: ['Laravel', 'PHP', 'MySQL','Flutter','Dart'],
     details: {
       overview: 'A mobile application specifically designed for the elderly to learn new skills through lessons and exercises',
@@ -298,7 +299,14 @@ const projects = ref([
     description: 'ระบบวิเคราะห์ข้อความเพื่อทำนายภาวะซึมเศร้า',
     image: '/projects/taskapp.jpg',
     technologies: ['Python', 'NLTK', 'TensorFlow'],
-    link: 'https://example.com/taskapp',
+    prototype: 'https://www.figma.com/embed?embed_host=share&url=https://www.figma.com/proto/z9Csv2tJN8AxUBXkkmGupv/nlp-miniproject?node-id=232-247&p=f&t=p8rZsgmiFhjOW5Mi-1&scaling=min-zoom&content-scaling=fixed&page-id=232%3A204',
+    link: 'https://prepro.informatics.buu.ac.th/depress-diary/prelogin?redirect=/seeAll/162',
+    source: [
+      {
+        name: 'Data Dictionary',
+        link: 'https://docs.google.com/spreadsheets/d/1v0uIEfAkzuWX7dRanWnghagtOmZxWxnuB0yLmswtIEY/edit?gid=0#gid=0'
+      }
+    ],
     details: {
       overview: 'ระบบวิเคราะห์ข้อความเพื่อตรวจจับและทำนายภาวะซึมเศร้าผ่านการประมวลผลภาษาธรรมชาติ',
       features: [
@@ -446,55 +454,6 @@ const projects = ref([
       duration: '5 เดือน',
       teamSize: '3 คน'
     }
-  },
-  {
-    id: 8,
-    title: 'Cooperative Education',
-    description: 'ระบบจัดการการฝึกงาน',
-    image: '/projects/taskapp.jpg',
-    technologies: ['Vue.js', 'Firebase', 'Tailwind CSS'],
-    link: 'https://example.com/taskapp',
-    details: {
-      overview: 'ระบบจัดการการฝึกงานสำหรับนักศึกษาและสถานประกอบการ',
-      features: [
-        'ระบบค้นหาสถานที่ฝึกงาน',
-        'การจัดการเอกสารฝึกงาน',
-        'การติดตามความก้าวหน้า',
-        'ระบบประเมินผล',
-        'การแจ้งเตือนอัตโนมัติ'
-      ],
-      challenges: [
-        'พัฒนา Frontend ด้วย Vue.js และ Tailwind CSS',
-        'พัฒนา Backend ด้วย Firebase',
-        'พัฒนาระบบจัดการเอกสาร',
-        'พัฒนาระบบติดตามและประเมินผล',
-        'พัฒนาระบบแจ้งเตือนอัตโนมัติ'
-      ],
-      solutions: [
-        'พัฒนาระบบจัดการเอกสารออนไลน์',
-        'สร้างระบบการสื่อสารแบบเรียลไทม์',
-        'ใช้ระบบการยืนยันตัวตนที่ปลอดภัย'
-      ],
-      role: 'นักพัฒนา Full Stack',
-      duration: '6 เดือน',
-      teamSize: '4 คน'
-    }
-  },
-  {
-    id: 9,
-    title: 'ChatBot',
-    description: 'ระบบตอบคำถามอัตโนมัติ',
-    image: '/projects/taskapp.jpg',
-    technologies: ['Python', 'TensorFlow', 'NLTK'],
-  }
-  ,
-  {
-    id: 10,
-    title: 'ร้านกาแฟ (ห้องสมุด มหาลัยบูรพา)',
-    description: 'ระบบตอบคำถามอัตโนมัติ',
-    image: '/projects/taskapp.jpg',
-    technologies: ['Python', 'TensorFlow', 'NLTK'],
-    prototype: 'https://www.figma.com/embed?embed_host=share&url=https://www.figma.com/proto/iwLGgNuxQhYvom3xptvoUB/Buu-coffee?node-id=124-344&p=f&t=d1eOwYA2TIsOuMcI-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=124%3A344&show-proto-sidebar=1',
   }
 ])
 
@@ -513,7 +472,7 @@ const closeProjectDetails = () => {
   <section id="projects" class="projects-section">
     <div class="glass-bg"></div>
     <div class="content-wrapper">
-      <h2 class="text-h3 mb-6 glass-text">MY PROJECTS</h2>
+      <h2 class="text-h3 mb-6 glass-text">MY FAVORITE PROJECTS</h2>
       <v-row>
         <v-col v-for="project in projects" :key="project.id" cols="12" md="6">
           <div class="glass-card">

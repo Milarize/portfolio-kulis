@@ -205,7 +205,7 @@ const toggleContact = () => {
         <v-col cols="12" md="6" class="text-center px-4 px-md-8">
           <div class="profile-image-container">
             <v-img
-              src="/portfolio-kulis/image/profile.png"
+              src="/image/profile.png"
               alt="Profile Image"
               class="profile-image hover-scale"
               cover
@@ -269,7 +269,7 @@ const toggleContact = () => {
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(circle at 50% 50%, rgba(103, 18, 122, 0.1) 0%, transparent 50%);
+  background: radial-gradient(circle at 50% 50%, rgba(255, 18, 255  , 0.1) 0%, transparent 50%);
   pointer-events: none;
 }
 
@@ -315,25 +315,11 @@ const toggleContact = () => {
   width: 400px;
   height: 400px;
   border-radius: 50%;
-  border: 4px solid #67127a;
-  box-shadow: 
-    20px 20px 60px rgba(0, 0, 0, 0.5),
-    -20px -20px 60px rgba(103, 18, 122, 0.2),
-    inset 5px 5px 10px rgba(255, 255, 255, 0.1),
-    inset -5px -5px 10px rgba(0, 0, 0, 0.3);
-  transition: all 0.3s ease;
-  object-fit: cover;
-  object-position: center 30%;
+  border: 4px solid #ffffff;
+ 
 }
 
-.profile-image:hover {
-  transform: scale(1.02);
-  box-shadow: 
-    25px 25px 75px rgba(0, 0, 0, 0.6),
-    -25px -25px 75px rgba(103, 18, 122, 0.3),
-    inset 8px 8px 15px rgba(255, 255, 255, 0.15),
-    inset -8px -8px 15px rgba(0, 0, 0, 0.4);
-}
+
 
 .floating-card {
   position: absolute;
@@ -347,10 +333,10 @@ const toggleContact = () => {
   gap: 10px;
   color: white;
   box-shadow: 
-    8px 8px 16px rgba(0, 0, 0, 0.3),
-    -8px -8px 16px rgba(103, 18, 122, 0.2),
+    8px 8px 16px rgba(255, 255, 255, 0.3),
+    -8px -8px 16px rgba(255, 255, 255, 0.991),
     inset 2px 2px 4px rgba(255, 255, 255, 0.1),
-    inset -2px -2px 4px rgba(0, 0, 0, 0.2);
+    inset -2px -2px 4px rgba(255, 255, 255, 0.2);
   animation: float 3s ease-in-out infinite;
 }
 

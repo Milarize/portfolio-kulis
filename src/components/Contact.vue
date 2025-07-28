@@ -3,8 +3,8 @@ import { ref } from 'vue'
 
 const contactInfo = ref({
   email: 'mailmint085@gmail.com',
-  github: 'github.com/yourusername',
-  linkedin: 'linkedin.com/in/yourusername'
+  github: 'github.com/Milarize',
+  gitlab: 'gitlab.com/64160233'
 })
 
 const form = ref({
@@ -61,10 +61,10 @@ const submitForm = async () => {
       <v-col cols="12" md="4">
         <v-card class="glass-card animate-card">
           <v-card-text class="text-center">
-            <v-icon size="large" color="primary" class="mb-2">mdi-linkedin</v-icon>
+            <v-icon size="large" color="primary" class="mb-2">mdi-gitlab</v-icon>
             <div>
-              <a :href="'https://' + contactInfo.linkedin" target="_blank" class="text-decoration-none">
-                LinkedIn
+              <a :href="'https://' + contactInfo.gitlab" target="_blank" class="text-decoration-none">
+                GitLab
               </a>
             </div>
           </v-card-text>
@@ -130,7 +130,7 @@ const submitForm = async () => {
 
 <style scoped>
 .contact-section {
-  background: linear-gradient(135deg, #1e3a6d 0%, #67127a 100%);
+  background: #000000;
   min-height: 100vh;
   padding: 2rem;
 }
@@ -138,7 +138,7 @@ const submitForm = async () => {
 /* Dialog Scrollbar Styles */
 :deep(.v-overlay__content) {
   scrollbar-width: thin;
-  scrollbar-color: #67127a rgba(255, 255, 255, 0.1);
+  scrollbar-color: #007AFF rgba(255, 255, 255, 0.1);
 }
 
 :deep(.v-overlay__content::-webkit-scrollbar) {
@@ -153,14 +153,14 @@ const submitForm = async () => {
 }
 
 :deep(.v-overlay__content::-webkit-scrollbar-thumb) {
-  background: linear-gradient(45deg, #67127a, #1e3a6d);
+  background: linear-gradient(45deg, #007AFF, #5856D6);
   border-radius: 8px;
   border: 2px solid rgba(255, 255, 255, 0.1);
   transition: all 0.3s ease;
 }
 
 :deep(.v-overlay__content::-webkit-scrollbar-thumb:hover) {
-  background: linear-gradient(45deg, #8a2be2, #1e3a6d);
+  background: linear-gradient(45deg, #5856D6, #007AFF);
   cursor: pointer;
 }
 
@@ -182,14 +182,14 @@ const submitForm = async () => {
 }
 
 :deep(.v-card::-webkit-scrollbar-thumb) {
-  background: linear-gradient(45deg, #67127a, #1e3a6d);
+  background: linear-gradient(45deg, #007AFF, #5856D6);
   border-radius: 8px;
   border: 2px solid rgba(255, 255, 255, 0.1);
   transition: all 0.3s ease;
 }
 
 :deep(.v-card::-webkit-scrollbar-thumb:hover) {
-  background: linear-gradient(45deg, #8a2be2, #1e3a6d);
+  background: linear-gradient(45deg, #5856D6, #007AFF);
   cursor: pointer;
 }
 
@@ -206,34 +206,36 @@ const submitForm = async () => {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(45deg, #67127a, #1e3a6d);
+  background: linear-gradient(45deg, #007AFF, #5856D6);
   border-radius: 10px;
   border: 2px solid rgba(255, 255, 255, 0.1);
   transition: all 0.3s ease;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(45deg, #8a2be2, #1e3a6d);
+  background: linear-gradient(45deg, #5856D6, #007AFF);
   cursor: pointer;
 }
 
 /* Firefox Scrollbar */
 * {
   scrollbar-width: thin;
-  scrollbar-color: #67127a rgba(255, 255, 255, 0.1);
+  scrollbar-color: #007AFF rgba(255, 255, 255, 0.1);
 }
 
 .glass-card {
-  background: rgba(255, 255, 255, 0.1) !important;
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  color: white;
+  background: rgba(28, 28, 30, 0.8) !important;
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #ffffff;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 16px;
 }
 
 .glass-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .animate-card {
@@ -252,32 +254,38 @@ const submitForm = async () => {
 }
 
 .v-icon {
-  color: #ffffff !important;
+  color: #007AFF !important;
 }
 
 a {
-  color: #ffffff;
+  color: #007AFF;
   font-size: 1.1rem;
   transition: color 0.3s ease;
+  font-weight: 500;
 }
 
 a:hover {
-  color: #8a2be2;
+  color: #5856D6;
 }
 
 .submit-btn {
-  background: linear-gradient(45deg, #67127a, #1e3a6d) !important;
+  background: linear-gradient(45deg, #007AFF, #5856D6) !important;
   color: white !important;
   transition: transform 0.3s ease !important;
+  border-radius: 12px;
+  font-weight: 600;
 }
 
 .submit-btn:hover {
   transform: scale(1.05);
+  background: linear-gradient(45deg, #5856D6, #007AFF) !important;
 }
 
 :deep(.v-field) {
-  background: rgba(255, 255, 255, 0.1) !important;
-  backdrop-filter: blur(5px);
+  background: rgba(28, 28, 30, 0.6) !important;
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 :deep(.v-field__input) {
@@ -286,5 +294,34 @@ a:hover {
 
 :deep(.v-label) {
   color: rgba(255, 255, 255, 0.7) !important;
+}
+
+:deep(.v-field--focused) {
+  border-color: #007AFF !important;
+}
+
+:deep(.v-field--variant-outlined) {
+  border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+:deep(.v-field--variant-outlined:hover) {
+  border-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+h2 {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+:deep(.v-card-title) {
+  color: #ffffff !important;
+  font-weight: 600;
+}
+
+:deep(.v-alert) {
+  background: rgba(52, 199, 89, 0.2) !important;
+  border: 1px solid rgba(52, 199, 89, 0.3) !important;
+  color: #34C759 !important;
+  border-radius: 12px;
 }
 </style> 

@@ -1,42 +1,105 @@
 <script setup>
-// Component logic can be added here
+import { ref } from 'vue'
+
+const technicalSkills = ref({
+  architecture: {
+    title: 'Architecture & Patterns',
+    skills: [
+      'Microservices Architecture',
+      'Domain-Driven Design (DDD)',
+      'Event-Driven Architecture',
+      'RESTful APIs',
+      'GraphQL APIs',
+      'Message Queuing (RabbitMQ)',
+      'Web Socket'
+    ]
+  },
+  systemDesign: {
+    title: 'System Design & UML',
+    skills: [
+      'Use Case Diagrams',
+      'Sequence Diagrams',
+      'Class Diagrams',
+      'Activity Diagrams',
+      'System Architecture Design',
+      'Database Schema Design'
+    ]
+  },
+  methodologies: {
+    title: 'Development Methodologies',
+    skills: [
+      'Agile / Scrum',
+      'Waterfall',
+      'Test-Driven Development (TDD)'
+    ]
+  },
+  ai: {
+    title: 'AI & Machine Learning',
+    skills: [
+      'Deep Learning',
+      'Natural Language Processing (NLP)',
+      'TensorFlow / PyTorch',
+      'Scikit-learn',
+      'Data Analysis & Visualization'
+    ]
+  },
+})
 </script>
 
 <template>
   <v-container class="about-section py-16" id="about">
     <v-row justify="center">
-      <v-col cols="12" md="8">
-        <h2 class="text-h3 mb-6 text-center flip-title">ABOUT ME</h2>
+      <v-col cols="12" md="10">
+        <h2 class="text-h3 mb-6 text-center flip-title">TECHNICAL EXPERTISE</h2>
         <v-card class="flip-card pa-6 mb-8" elevation="2">
           <v-row>
-            <v-col cols="12" md="4" class="text-center">
-              <v-avatar size="200" class="mb-4 flip-avatar">
-                <v-img src="/portfolio-kulis/image/profile.png" alt="Profile Picture"></v-img>
-              </v-avatar>
+            <v-col cols="12" md="4">
+              <div class="profile-section mb-6">
+                <h3 class="text-h4 mb-4 flip-text">Kulisara Thongnamkhum</h3>
+                <p class="text-body-1 mb-4 flip-text" style="color: white;">
+                  Full-Stack Developer & AI Enthusiast
+                </p>
+                <p class="text-body-1 mb-4 flip-text" style="color: white;">
+                  มีประสบการณ์ในการพัฒนาแอปพลิเคชันจากมหาลัย ตั้งแต่การออกแบบระบบและฐานข้อมูล การพัฒนา Frontend และ Backend จนถึงการ Deploy และดูแลระบบในสภาพแวดล้อมจริง
+                </p>
+                <p class="text-body-1 mb-4 flip-text" style="color: white;">
+                  มีประสบการณ์ในการเป็นผู้นำทีม รับผิดชอบการออกแบบระบบ logic การวิเคราะห์ปัญหา และวางแผนงานให้กับสมาชิกในทีม รวมถึงการประสานงานระหว่างทีมและผู้ว่าจ้าง
+                </p>
+                <p class="text-body-1 mb-4 flip-text" style="color: white;">
+                  เรียนรู้และทดลองใช้เทคโนโลยีใหม่ๆ อยู่เสมอ โดยเฉพาะในด้าน AI และ Machine Learning เพื่อนำมาประยุกต์ใช้ในการพัฒนาแอปพลิเคชัน
+                </p>
+                <div class="location-info">
+                  <v-icon color="#67127a" class="mr-2">mdi-map-marker</v-icon>
+                  <span style="color: white;">Rayong, Thailand</span>
+                </div>
+              </div>
             </v-col>
-            <v-col cols="12" md="8">
-              <p>Welceome to my World</p>
-              <h3 class="text-h4 mb-4 flip-text">Kulisara Thongnamkhum</h3>
-              <p class="text-body-1 mb-4 flip-text" style="color: white;">
-               Based in Bangkok, Thailand. or Rayong, Thailand.
-              </p>
-              <p class="text-body-1 mb-4 flip-text" style="color: white;">
             
-              </p>
-              <v-row class="mt-4">
-                <v-col cols="12" sm="6">
-                  <h4 class="text-h6 mb-2 flip-text">Main Skills</h4>
-              
+            <v-col cols="12" md="8">
+              <v-row>
+                <v-col 
+                  v-for="(category, key) in technicalSkills" 
+                  :key="key"
+                  cols="12" 
+                  sm="6" 
+                  class="mb-4"
+                >
+                  <div class="skill-category">
+                    <h4 class="text-h6 mb-3 flip-text" style="color: #67127a; font-weight: 600;">
+                      {{ category.title }}
+                    </h4>
+                    <div class="skills-list">
+                      <div 
+                        v-for="skill in category.skills" 
+                        :key="skill"
+                        class="skill-item"
+                      >
+                        <v-icon size="small" color="#67127a" class="mr-2">mdi-check-circle</v-icon>
+                        <span style="color: white; font-size: 0.9rem;">{{ skill }}</span>
+                      </div>
+                    </div>
+                  </div>
                 </v-col>
-                <v-col cols="12" sm="6">
-                  <h4 class="text-h6 mb-2 flip-text">Awards</h4>
-              
-                </v-col>
-                <v-col cols="12" sm="6">
-                  <h4 class="text-h6 mb-2 flip-text">Education & Certificate</h4>
-              
-                </v-col>
-
               </v-row>
             </v-col>
           </v-row>
@@ -81,18 +144,54 @@
   text-shadow: 0 0 10px rgba(103, 18, 122, 0.5);
 }
 
-.flip-avatar {
+.flip-text {
   animation: flipIn 1.2s ease-out;
   transform-origin: center;
-  border: 3px solid rgba(103, 18, 122, 0.3);
-  box-shadow: 0 8px 32px rgba(103, 18, 122, 0.2);
-  transition: all 0.3s ease;
 }
 
-.flip-avatar:hover {
-  transform: scale(1.05);
-  border-color: rgba(103, 18, 122, 0.5);
-  box-shadow: 0 12px 40px rgba(103, 18, 122, 0.3);
+.profile-section {
+  padding: 20px;
+  background: rgba(103, 18, 122, 0.1);
+  border-radius: 12px;
+  border-left: 4px solid #67127a;
+}
+
+.location-info {
+  display: flex;
+  align-items: center;
+  margin-top: 16px;
+}
+
+.skill-category {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  padding: 16px;
+  height: 100%;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(103, 18, 122, 0.2);
+}
+
+.skill-category:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(103, 18, 122, 0.2);
+}
+
+.skills-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.skill-item {
+  display: flex;
+  align-items: center;
+  padding: 4px 0;
+  transition: all 0.2s ease;
+}
+
+.skill-item:hover {
+  transform: translateX(5px);
 }
 
 @keyframes flipIn {
@@ -109,15 +208,28 @@
 h2 {
   color: #67127a;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  font-family: 'Kanit', sans-serif;
 }
 
 h3 {
   color: #ffffff;
+  font-family: 'Kanit', sans-serif;
 }
 
 h4 {
   color: #ffffff;
+  font-family: 'Kanit', sans-serif;
 }
 
+.about-section {
+  font-family: 'Kanit', sans-serif;
+}
 
+.flip-title {
+  font-family: 'Kanit', sans-serif;
+}
+
+.flip-text {
+  font-family: 'Kanit', sans-serif;
+}
 </style> 
