@@ -37,7 +37,7 @@ const technicalSkills = ref({
     title: 'AI & Machine Learning',
     skills: [
       'Deep Learning',
-      'Natural Language Processing (NLP)',
+      'Natural Language Processing',
       'TensorFlow / PyTorch',
       'Scikit-learn',
       'Data Analysis & Visualization'

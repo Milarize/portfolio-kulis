@@ -188,6 +188,29 @@ const techLogos = {
 
 const selectedProject = ref(null)
 const showProjectDetails = ref(false)
+const currentHackathonImage = ref('')
+
+// ฟังก์ชันสำหรับสุ่มภาพจากโฟลเดอร์ hackathon
+const getRandomHackathonImage = () => {
+  const hackathonImages = [
+    '/portfolio-kulis/projects/hackathon/IMG_2463.jpg',
+    '/portfolio-kulis/projects/hackathon/IMG_2557.jpg',
+    '/portfolio-kulis/projects/hackathon/IMG_3072.JPG',
+    '/portfolio-kulis/projects/hackathon/IMG_3073.JPG'
+  ]
+  return hackathonImages[Math.floor(Math.random() * hackathonImages.length)]
+}
+
+// ฟังก์ชันสำหรับเปลี่ยนภาพอัตโนมัติ
+const startImageRotation = () => {
+  currentHackathonImage.value = getRandomHackathonImage()
+  setInterval(() => {
+    currentHackathonImage.value = getRandomHackathonImage()
+  }, 5000) // เปลี่ยนภาพทุก 5 วินาที
+}
+
+// เริ่มการเปลี่ยนภาพเมื่อ component ถูก mount
+startImageRotation()
 
 const projects = ref([
   {
@@ -228,7 +251,7 @@ const projects = ref([
     id: 2,
     title: 'Mobile Learning Application for the Elderly',
     description: 'แอปพลิเคชันสำหรับการเรียนรู้และฝึกทักษะสำหรับผู้สูงอายุ',
-    image: '/projects/taskapp.jpg',
+    image: '/projects/mobile-learning.jpg',
     link: 'https://moocapp.buu.in.th',
     technologies: ['Laravel', 'PHP', 'MySQL','Flutter','Dart'],
     details: {
@@ -264,7 +287,7 @@ const projects = ref([
     id: 3,
     title: 'Predicting Stroke Risk with Machine Learning',
     description: 'A machine learning system that assists doctors at Chockchai Hospital in predicting stroke risk using health data',
-    image: '/projects/taskapp.jpg',
+    image: '/projects/stroke-prediction.jpg',
     technologies: ['Python', 'TensorFlow', 'Scikit-learn'],
     link: 'https://example.com/taskapp',
     details: {
@@ -297,7 +320,7 @@ const projects = ref([
     id: 4,
     title: 'การทำนายภาวะซึมเศร้าด้วย NLP',
     description: 'ระบบวิเคราะห์ข้อความเพื่อทำนายภาวะซึมเศร้า',
-    image: '/projects/taskapp.jpg',
+    image: '/projects/nlp-depression.jpg',
     technologies: ['Python', 'NLTK', 'TensorFlow'],
     prototype: 'https://www.figma.com/embed?embed_host=share&url=https://www.figma.com/proto/z9Csv2tJN8AxUBXkkmGupv/nlp-miniproject?node-id=232-247&p=f&t=p8rZsgmiFhjOW5Mi-1&scaling=min-zoom&content-scaling=fixed&page-id=232%3A204',
     link: 'https://prepro.informatics.buu.ac.th/depress-diary/prelogin?redirect=/seeAll/162',
@@ -337,7 +360,7 @@ const projects = ref([
     id: 5,
     title: 'Paws Pair',
     description: 'แพลตฟอร์มหาคู่ให้สัตว์เลี้ยง โดยเพิ่มความอัจริยะด้วย Machine Learning',
-    image: '/projects/taskapp.jpg',
+    image: '/projects/paws-pair.jpg',
     prototype: 'https://www.figma.com/embed?embed_host=share&url=https://www.figma.com/proto/w7B8moetBpsSSJecbLRHCM/PAWS-PAIR?node-id=1190-2334&p=f&t=oT2ylzNN5kh5tBQv-1&scaling=scale-down&content-scaling=fixed&page-id=636%3A2&starting-point-node-id=1177%3A685&show-proto-sidebar=1',
     technologies: ['Flutter', 'Dart', 'MySQL', 'Socket.io', 'Nest.js','Deep learning','Python','FastAPI','NLTK'],
     source: [
@@ -391,10 +414,9 @@ const projects = ref([
     id: 6,
     title: 'Cooking Papa',
     description: 'แอปพลิเคชันสูตรอาหารและจัดการครัว',
-    image: '/projects/taskapp.jpg',
+    image: '/portfolio-kulis/projects/cooking-papa.png',
     technologies: ['Flutter', 'Dart', 'Firebase', 'Sqlite', 'Nest.js'],
     prototype: 'https://www.figma.com/embed?embed_host=share&url=https://www.figma.com/proto/HTnPt77W4FcdXHcZNDCJ3M/%E0%B8%AD%E0%B8%B2%E0%B8%AB%E0%B8%B2%E0%B8%A3%F0%9F%A4%91?node-id=10-2&starting-point-node-id=10%3A2&t=Umy9yu8RT8UIVkp3-1',
-    link: 'https://example.com/taskapp',
     details: {
       overview: 'แอปพลิเคชันสำหรับค้นหาและจัดการสูตรอาหาร พร้อมระบบจัดการวัตถุดิบและอุปกรณ์ในครัว',
       features: [
@@ -425,7 +447,7 @@ const projects = ref([
     id: 7,
     title: 'Booking System',
     description: 'ระบบจองห้องพัก',
-    image: '/projects/taskapp.jpg',
+    image: '/projects/booking-system.jpg',
     technologies: ['Python', 'TensorFlow', 'NLTK'],
     link: 'https://example.com/taskapp',
     prototype: 'https://www.figma.com/embed?embed_host=share&url=https://www.figma.com/proto/H5kqrvfOHJAAHHKXCJUicb/HOTEL-CALIFORNIA?node-id=4-2&starting-point-node-id=4%3A2&t=Cweo4UEPQpaODkbV-1',
@@ -453,6 +475,39 @@ const projects = ref([
       role: 'นักพัฒนา AI',
       duration: '5 เดือน',
       teamSize: '3 คน'
+    }
+  },
+  {
+    id: 8,
+    title: 'Height Measuring System for Bedridden Patients',
+    description: 'การแข่งขัน Hackathon CDG 2024 เป็นโจทย์เพื่อพัฒนาคุณภาพชีวิตของผู้ป่วยติดเตียง',
+    image: currentHackathonImage,
+    technologies: ['dart', 'Node.js', 'MySQL','Nest.js','JavaSwing'],
+    link: 'https://docs.google.com/spreadsheets/d/1v0uIEfAkzuWX7dRanWnghagtOmZxWxnuB0yLmswtIEY/edit?gid=0#gid=0',
+    details: {
+      overview: 'ระบบวัดความสูงสำหรับผู้ป่วยติดเตียงที่พัฒนาขึ้นในงาน Hackathon CDG 2024 เพื่อช่วยพัฒนาคุณภาพชีวิตของผู้ป่วย',
+      features: [
+        'ระบบวัดความสูงแบบอัตโนมัติ',
+        'การประมวลผลภาพด้วย Computer Vision',
+        'การแสดงผลแบบเรียลไทม์',
+        'ระบบบันทึกข้อมูลผู้ป่วย',
+        'การสร้างรายงานอัตโนมัติ'
+      ],
+      challenges: [
+        'พัฒนาโปรแกรมด้วย Dart และ Flutter',
+        'พัฒนาระบบ Computer Vision สำหรับการวัดความสูง',
+        'พัฒนาระบบประมวลผลภาพแบบเรียลไทม์',
+        'พัฒนาระบบฐานข้อมูล MySQL',
+        'พัฒนาระบบ Backend ด้วย Nest.js'
+      ],
+      solutions: [
+        'ใช้ OpenCV สำหรับการประมวลผลภาพ',
+        'พัฒนาอัลกอริทึมการวัดความสูงที่แม่นยำ',
+        'ออกแบบระบบที่ใช้งานง่ายสำหรับบุคลากรทางการแพทย์'
+      ],
+      role: 'นักพัฒนา Full Stack',
+      duration: '2 วัน (Hackathon)',
+      teamSize: '4 คน'
     }
   }
 ])
